@@ -15,3 +15,13 @@
     line-height: 24px;
     margin: 25px 0 0;
 }
+
+@media (max-width: 767px) {
+    .bonus__title {
+        padding: 20px;
+    }
+
+    .bonus ul {
+        padding-left: 20px;
+    }
+}

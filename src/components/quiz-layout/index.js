@@ -60,15 +60,23 @@ const QuizLayout = props => (
   <div className='container'>
     <div className="quiz-layout">
       <div className="quiz-layout-left">
-        <Questions question={steps[props.currentStep - 1].question}
-                   options={steps[props.currentStep - 1].options}
-                   keyName={steps[props.currentStep - 1].key}
-                   nextStep={props.nextStep}
-                   prevStep={props.prevStep}
-                   setData={props.setData}
-                   data={props.data}
-                   done={props.currentStep >= steps.length}
-                   currentStep={props.currentStep}/>
+        {
+          props.success
+            ? <div className='success'>
+              <div className="success__title">Спасибо! ваша заявка принята!</div>
+              <div className="success__subtitle">Мы свяжемся с вами в ближайшее время</div>
+            </div>
+            : <Questions question={steps[props.currentStep - 1].question}
+                         options={steps[props.currentStep - 1].options}
+                         keyName={steps[props.currentStep - 1].key}
+                         handleSubmit={props.handleSubmit}
+                         nextStep={props.nextStep}
+                         prevStep={props.prevStep}
+                         setData={props.setData}
+                         data={props.data}
+                         done={props.currentStep >= steps.length}
+                         currentStep={props.currentStep}/>
+        }
         <Bonus/>
       </div>
       <Advantages/>

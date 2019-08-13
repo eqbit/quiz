@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import {FirstSlide} from '../first-slide';
 import {QuizLayout} from '../quiz-layout';
+import axios from 'axios';
 
 class Quiz extends React.Component {
   constructor() {
@@ -13,8 +14,10 @@ class Quiz extends React.Component {
         stages: '1 этаж',
         area: 'до 50 кв.м.',
         budget: 'До 1 млн.руб.',
-        gift: 'Наружная сейф-дверь'
-      }
+        gift: 'Наружная сейф-дверь',
+        phone: ''
+      },
+      success: false
     };
   }
 
@@ -37,22 +40,37 @@ class Quiz extends React.Component {
     })
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+
+    const arrow = this;
+
+    axios.get('https://karsikko-dom.ru/qwiz.php', {
+      params: this.state.data
+    })
+      .then(function (response) {
+        arrow.setState({
+          success: true
+        })
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+
   render() {
     return (
       <div className='quiz'>
         {
-          !this.state.currentStep &&
-          <FirstSlide setSlide={this.setSlide}/>
-        }
-
-        {
-          this.state.currentStep
-          ? <QuizLayout currentStep={this.state.currentStep}
+          !this.state.currentStep
+            ? <FirstSlide setSlide={this.setSlide}/>
+            : <QuizLayout currentStep={this.state.currentStep}
                       data={this.state.data}
                       setData={this.setData}
+                      success={this.state.success}
+                      handleSubmit={this.handleSubmit}
                       nextStep={this.nextStep}
                       prevStep={this.prevStep}/>
-          : null
         }
       </div>
     )

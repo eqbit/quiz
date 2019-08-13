@@ -4,3 +4,15 @@
     display: flex;
     align-items: center;
 }
+
+@media (max-width: 1023px) {
+    .quiz {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .quiz {
+        padding: 0;
+    }
+}

@@ -2,3 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 360px;
 }
+
+@media(max-width: 1023px) {
+    .quiz-layout {
+        grid-template-columns: 100%;
+    }
+}
