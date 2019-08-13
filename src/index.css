@@ -35,10 +35,12 @@ main {
 }
 
 .container {
-  width: 1167px;
-  max-width: calc(100% - 30px);
+  width: 1197px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .text-primary {
