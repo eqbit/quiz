@@ -14,7 +14,7 @@ body {
 
 :root {
   --primary-color: #FFCB06;
-  --primary-hover: #b48405;
+  --primary-hover: #cf9b05;
 }
 
 #root, .wrapper {
@@ -56,6 +56,8 @@ main {
   transition: .3s;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
+  min-width: 140px;
+  user-select: none;
 }
 
 .btn--primary {

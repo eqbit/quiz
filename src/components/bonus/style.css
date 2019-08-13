@@ -1,0 +1,17 @@
+.bonus {
+    margin-top: 25px;
+}
+
+.bonus__title {
+    background: #EAEAEA;
+    font-size: 18px;
+    padding: 20px 50px;
+    text-transform: uppercase;
+}
+
+.bonus ul {
+    padding-left: 70px;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 25px 0 0;
+}
