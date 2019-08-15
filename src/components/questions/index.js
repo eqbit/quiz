@@ -66,7 +66,7 @@ const Questions = props => (
                    onChange={e => props.setData('phone', e.target.value)}
                    className="questions-nav-final-input"/>
 
-        <button type='submit' className="btn btn--primary">отправить</button>
+        <button type='submit' className="btn btn--primary" id='quiz-submit'>отправить</button>
 
         <div className="questions-nav-final-agreement">
           Отправляя данную форму, Вы принимаете условия <a href="https://karsikko-dom.ru/info/processing/"

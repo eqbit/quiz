@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container">
         <div className="header-row">
           <div className="header-row-address">
-            <a href="tel:+7 (3452) 53-80-80" className="header-row-address__phone">
+            <a href="tel:+7 (3452) 53-80-80" className="header-row-address__phone" id='phone-tyumen'>
               +7 (3452) 53-80-80
             </a>
       
@@ -21,7 +21,7 @@ const Header = () => {
           </a>
     
           <div className="header-row-address">
-            <a href="tel:+7 (3467) 22-31-22" className="header-row-address__phone">
+            <a href="tel:+7 (3467) 22-31-22" className="header-row-address__phone" id='phone-khanty'>
               +7 (3467) 22-31-22
             </a>
       
